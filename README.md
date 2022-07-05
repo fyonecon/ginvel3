@@ -107,7 +107,7 @@ GinLaravel框架仓库：
 ```cmd
 获取源代码：
 cd go/src
-git clone https://github.com/fyonecon/ginvel.git
+git clone https://github.com/fyonecon/ginvel3.git
 
 初始化项目：
 go mod init
