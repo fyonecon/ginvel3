@@ -1,15 +1,15 @@
 
 ## 说明（当前版本：gv3.+ ）
-Ginvel是GinLaravel的难度版（升级版）。Ginvel使用起来可能比较难，入门难、操作难、阅读难。
+>Ginvel是GinLaravel的难度版（升级版）。Ginvel使用起来可能比较难，入门难、操作难、阅读难。
+>
+>Ginvel是Golang的web MVC框架，基础特性基于Gin、gRPC、Go1.17+、Redis5+。
 
-Ginvel是Golang的web MVC框架，基础特性基于Gin、gRPC、Go1.17+。
-
-Ginvel3框架：
+Ginvel3框架仓库：
 >（大陆）https://bitbucket.org/ginvel/ginvel3
 > 
 >（推荐）https://github.com/fyonecon/ginvel3
 
-GinLaravel框架：
+GinLaravel框架仓库：
 >https://github.com/fyonecon/ginlaravel
 
 ## 现已支持
