@@ -1,0 +1,83 @@
+# Ginvel框架配置文件，参数与源代码分离，方便灵活部署二进制项目
+# 本项目开源地址（web+rpc框架）：https://github.com/fyonecon/ginvel
+# 纯web框架请访问：https://github.com/fyonecon/ginlaravel
+
+title = "Ginvel框架全局配置文件（local.framework.toml），支持解析url-toml文件"
+
+################
+
+[framework]
+framework_hash = "24@22O2levinG" # toml文件密钥，密钥不正确，则toml文件与Ginvel不匹配，直接panic。注意，有格式限制：Y@密钥。
+timezone = "Asia/Shanghai" # 系统时区，默认：中国时区（含新加坡）Asia/Shanghai。其他：世界标准GMT、美股时区EST、日本东京Asia/Tokyo、越南胡志明Asia/Ho_Chi_Minh
+gv_version = "gv-3.2.5-20220624-10"
+framework_path = "" # 框架根目录的绝对路径
+desc       = "Ginvel是一个Web+GRPC的Golang微服务框架，基础特性基于Gin，支持MVC。框架需要「 Go1.17~ + MySQL5.7~ + Redis5~ + CPU核心2～ 」的运行环境。Apache 2.0。"
+author     = "Ginvel"
+email      = "fyonecon@gmail.com"
+github     = "https://github.com/fyonecon"
+gitee      = "https://gitee.com/fyonecon"
+
+[http_server] # http服务-api
+host = "0.0.0.0" # 容器化下请用：0.0.0.0，默认：127.0.0.1
+port = "9500" # http端口，默认9500
+
+[grpc_server] # grpc服务-server
+host = "0.0.0.0" # 容器化下请用：0.0.0.0，默认：127.0.0.1
+port = "9600" # tcp端口，默认：9600，应该与grpc_client的端口一致
+
+[grpc_client] # grpc服务-client
+host = "0.0.0.0" # 容器化下请用：0.0.0.0，默认：127.0.0.1
+port = "9600" # tcp端口，默认：9600，应该与grpc_server的端口一致
+
+[mysql_1]
+host = "127.0.0.1"
+port = "3306" # 默认：3306
+database = "ginvel_test"
+user = "root_public"
+pwd = "12345678"
+encode = "utf8mb4" # 默认字符集utf8mb4，排序规则utf8mb4_unicode_ci
+
+[mysql_2] # 需要手动在框架里实例化
+host = "127.0.0.1"
+port = "3306" # 默认：3306
+database = "ginvel_test2"
+user = "root_public"
+pwd = "12345678"
+encode = "utf8mb4" # 默认字符集utf8mb4，排序规则utf8mb4_unicode_ci
+
+[redis_1]
+host = "127.0.0.1"
+port = "6379" # 默认：6379
+pwd = ""
+database = "0" # 默认：0
+
+[redis_2] # 需要手动在框架里实例化
+host = "127.0.0.1"
+port = "6379" # 默认：6379
+pwd = ""
+database = "0" # 默认：0
+
+[elastic_search]
+http_host = "http://127.0.0.1" # 前面要加协议http或https
+port = "9200" # 默认9200
+username = ""
+password = ""
+cloud_id = ""
+api_key = ""
+
+
+[view] # 静态文件、模板路径
+view_html = "storage/views/html" # 默认：storage/views/html
+view_static = "storage/views/static" # 默认：storage/views/static
+view_tpl = "storage/views/html/**/*" # 本框架支持模板但是不推荐使用。默认：storage/views/html/**/*
+
+[version_block] # 按接口版本屏蔽某个版本的接口，例：version&version
+api = "0&0" # 屏蔽接口
+web = "0&0" # 屏蔽模板
+
+[common] # 其他公共变量配置
+env = "release" # 版本发布，生产版：release、开发版：debug（或dev）
+log_host = "127.0.0.1" # 日志服务器的ip地址，默认存到本地
+log_post = "9600" # 日志服务器的端口，默认与api端口或rpc端口一致
+
+################

@@ -1,0 +1,12 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    padding: 10px 10px;
+    line-height: 30px;
+    color: darkgoldenrod;
+}
+

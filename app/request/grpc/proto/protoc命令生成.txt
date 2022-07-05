@@ -1,0 +1,16 @@
+使用说明：
+1. 其他语言调用接口请参考：
+Java：https://blog.csdn.net/tangyaya8/article/details/89349925
+PHP：https://blog.csdn.net/duzhenxun/article/details/96483463
+2. Go调用需将"ginvel.proto"文件在对方目录重新生成，或将"Proto"文件夹整个复制过去。
+
+编译proto文件的命令：
+fyonecon@DJqinshihuang grpc %
+protoc --go_out=. --go_opt=paths=source_relative \
+    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+    proto/ginvel.proto
+
+推荐本目录的文件名用小写。
+
+
+

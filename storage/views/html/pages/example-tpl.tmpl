@@ -1,0 +1,31 @@
+{{ define "pages/example-tpl.tmpl" }}
+<!--教程文档：https://www.tizi365.com/archives/268.html -->
+
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta name="google" content="notranslate"/>
+    <title>Ginvel - html多模板输出</title>
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link href="/static/css/page.css" rel="stylesheet"  />
+    <script src="/static/js/page.js" type="javascript" charset="UTF-8"></script>
+</head>
+<body >
+    <h3>html多模板输出示例</h3>
+    <h4>说明：不推荐使用模板渲染数据，请走前后端分离的模板渲染数据</h4>
+    <h4>{{ .url }}</h4>
+    <script>
+        ;(function (){
+            console.log("Ginvel - html - tpl");
+        })();
+    </script>
+</body>
+</html>
+
+
+<!--教程文档：https://www.tizi365.com/archives/268.html -->
+{{ end }}

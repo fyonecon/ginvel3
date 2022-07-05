@@ -1,0 +1,7 @@
+{
+  "json_desc": "本JSON文件是中间件http_block的数据文件。约定用#@连接多个字段。",
+  "black_ip": "192.168.0.0#@192.168.0.1",
+  "white_ip": "::0#@0.0.0.0#@127.0.0.1",
+  "maxSniffHourIpPV": 190,
+  "maxDDOSHourIpPV": 4990
+}

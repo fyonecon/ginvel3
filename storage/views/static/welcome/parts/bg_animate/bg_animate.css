@@ -1,0 +1,172 @@
+
+.bg_animate-div{
+    opacity: 0.7;
+    zoom: 1.1;
+}
+
+/*============*/
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* ======== BUTTONS ======== */
+
+.option__text {
+    float: left;
+    width: 8em;
+    transform-origin: 0 0;
+    transform: skewX(-15deg);
+    /*background: dimgrey;*/
+    cursor: pointer;
+}
+
+.option:checked + .option__text {
+    background: grey;
+    color: yellow;
+}
+
+/****************************************************************
+ *																*
+ * 						      浠ｇ爜搴�							*
+ *                        www.dmaku.com							*
+ *       		  鍔姏鍒涘缓瀹屽杽銆佹寔缁洿鏂版彃浠朵互鍙婃ā鏉�			*
+ * 																*
+****************************************************************/
+/* ======== TETRAHEDRON ======== */
+.polyhedron, .polyhedron *, .polyhedron *:before {
+    box-sizing: border-box;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    z-index: 1;
+}
+
+.polyhedron {
+    font-size: 10px;
+    animation: ani 16s linear infinite;
+}
+
+@keyframes ani {
+    50% {
+        transform: rotateX(-180deg) translateZ(3.33333em) rotateY(360deg) translateX(5em) rotateZ(180deg) translateY(2.5em);
+    }
+
+    100% {
+        transform: rotateX(-360deg) translateZ(0) rotateY(720deg) translateX(0) rotateZ(360deg) translateY(0);
+    }
+}
+.polyhedron__face {
+    overflow: hidden;
+    border-top: solid .125em;
+    border-left: solid .125em;
+    margin: -5em;
+    width: 10em;
+    height: 10em;
+    transform: rotate(60deg) skewX(30deg) scaleY(0.86603);
+}
+.polyhedron__face:nth-child(1) {
+    transform: rotateX(-90deg) translateY(2.88675em) rotate(60deg) skewX(30deg) scaleY(0.86603);
+}
+#semitransp:checked ~ .polyhedron .polyhedron__face:nth-child(1):before {
+    background: rgba(255, 20, 147, 0.32);
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(1) {
+    backface-visibility: hidden;
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(1):before {
+    background: linear-gradient(225deg, deeppink, yellow, lime);
+    content: "Scooby-Doo";
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(1) {
+    border: none;
+    backface-visibility: hidden;
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(1):before {
+    border: none;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/couguar.jpg");
+    background-size: cover;
+}
+.polyhedron__face:nth-child(2) {
+    transform: rotateY(60deg) translateZ(2.88675em) rotateX(19.47122deg) rotate(60deg) skewX(30deg) scaleY(0.86603);
+}
+#semitransp:checked ~ .polyhedron .polyhedron__face:nth-child(2):before {
+    background: linear-gradient(90deg, rgba(0, 255, 0, 0.32), rgba(0, 0, 255, 0.32));
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(2) {
+    backface-visibility: hidden;
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(2):before {
+    background: linear-gradient(170deg, deeppink, yellow, lime);
+    content: "where";
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(2) {
+    border: none;
+    backface-visibility: hidden;
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(2):before {
+    border: none;
+    background: url("tiger.jpg");
+    background-size: cover;
+}
+.polyhedron__face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(2.88675em) rotateX(19.47122deg) rotate(60deg) skewX(30deg) scaleY(0.86603);
+}
+#semitransp:checked ~ .polyhedron .polyhedron__face:nth-child(3):before {
+    background: linear-gradient(90deg, rgba(0, 0, 255, 0.32), rgba(255, 0, 0, 0.32));
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(3) {
+    backface-visibility: hidden;
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(3):before {
+    background: linear-gradient(181deg, deeppink, yellow, lime);
+    content: "are";
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(3) {
+    border: none;
+    backface-visibility: hidden;
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(3):before {
+    border: none;
+    background: url("snow_leopard.jpg");
+    background-size: cover;
+}
+.polyhedron__face:nth-child(4) {
+    transform: rotateY(300deg) translateZ(2.88675em) rotateX(19.47122deg) rotate(60deg) skewX(30deg) scaleY(0.86603);
+}
+#semitransp:checked ~ .polyhedron .polyhedron__face:nth-child(4):before {
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.32), rgba(0, 255, 0, 0.32));
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(4) {
+    backface-visibility: hidden;
+}
+#text:checked ~ .polyhedron .polyhedron__face:nth-child(4):before {
+    background: linear-gradient(109deg, deeppink, yellow, lime);
+    content: "you";
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(4) {
+    border: none;
+    backface-visibility: hidden;
+}
+#image:checked ~ .polyhedron .polyhedron__face:nth-child(4):before {
+    border: none;
+    background: url("cheetah.jpg");
+    background-size: cover;
+}
+.polyhedron__face:before {
+    margin: -4.33013em -5em;
+    width: 10em;
+    height: 8.66025em;
+    border-bottom: solid .125em;
+    transform: scaleY(1.1547) skewX(-30deg) rotate(-60deg) translateY(-50%);
+    font-style: oblique;
+    line-height: 11.54701em;
+    text-shadow: 0 0 .25em black;
+    content: '';
+}
+

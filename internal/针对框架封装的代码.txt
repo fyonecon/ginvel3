@@ -1,0 +1,1 @@
+其实除了routes、common、app，自定义的文件夹都可以放在framework里面，而不是将文件空间都分散在根目录或制作一个internal文件夹。

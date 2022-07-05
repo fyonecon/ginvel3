@@ -1,0 +1,32 @@
+info:
+  contact:
+    email: fyonecon@gmail.com
+    name: fyonecon
+    url: https://go.ginvel.com
+  description: Ginvel是一个Web+GRPC的Golang微服务框架，基础特性基于Gin，支持MVC。框架需要「 Go1.17~ + MySQL5.7~
+    + Redis5~ + CPU核心2～ 」的运行环境。
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Ginvel微服务框架
+  version: gl-3.0+
+paths:
+  /record/{some_id}:
+    get:
+      consumes:
+      - application/json
+      description: get record by ID
+      parameters:
+      - description: userId
+        in: path
+        name: some_id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+swagger: "2.0"

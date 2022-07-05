@@ -1,0 +1,20 @@
+/*主入口css，可以做全局css使用。*/
+.hide{display:none !important;}
+.loading-div{position:fixed;z-index:20190100;top:0;left:0;bottom:0;right:0;margin:auto;background:rgba(232,232,232,0.4)}
+.loading-img{position:fixed;z-index:20211020;width:40px;height: 40px;top:-15%;left:0;bottom:0;right:0;margin:auto;}
+.clear{clear:both}
+.div-alert_txt-text {line-height: 30px;font-size: 14px;color: #f5f5f5;letter-spacing: 2px;text-align: center;max-width: 240px;min-width: 100px;min-height: 30px;max-height: 88px;overflow: hidden;padding: 5px 10px;background: rgba(51,51,51,0.9);border-radius: 5px;border: 1px solid rgba(245,245,245,0.5);position: fixed;/*z-index: 8800000;*/left: 0;right: 0;top: calc(50% - 150px);margin: auto;}
+.div-alert_txt-bg {position: fixed;left: 0;top: 0;margin: auto;width: 100%;height: 100%;background: rgba(36,36,36,0.2);cursor: not-allowed;/*z-index: 8700000;*/}
+.notice_txt-box{max-height: 80%;overflow: hidden;max-width: 300px;min-width: 240px;position: fixed;z-index: 7500000;
+    left: 0;
+    top: 80px;
+    right: 0;
+    margin-left: auto; margin-right: auto;
+}
+.notice_txt-li{padding: 10px 10px;border-radius: 5px;background: rgba(44,44,44,0.7);border: 1px solid rgba(245,245,245,0.8);margin-bottom: 2px; margin-top: 10px;position: relative;}
+.notice-black{background: rgba(44,44,44,0.7) !important;}
+.notice-green{background: rgba(46,139,87,0.9) !important;} .notice-green>.notice_txt-show{color: black !important;}
+.notice-yellow{background: rgba(218,165,32,0.9) !important;} .notice-yellow>.notice_txt-show{color: black !important;}
+.notice-blue{background: rgba(60,140,255,0.8) !important;} .notice-blue>.notice_txt-show{color: black !important;}
+.notice_txt-show{font-size: 14px;color: #f5f5f5;letter-spacing: 1px;line-height: 24px;max-height: 96px;overflow: hidden;}
+.notice_txt-close{position: absolute;width: 30px;text-align: center;right: 1px;top: 5px;line-height: 30px;font-size: 15px;color: red;font-weight: 700;}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "ginvel/app/grpc/proto";
+option java_multiple_files = true;
+option java_package = "io.grpc.ginvel.proto";
+option java_outer_classname = "GinvelProto";
+
+package Proto;
+
+// 预定义函数
+service Greeter {
+    // Sends a greeting
+    rpc GrpcHandler (HandlerInput) returns (HandlerBack) {}
+
+}
+
+// proto常用数据类型：int、float、bool、string
+
+// 定义函数的参数
+message HandlerInput {
+    string input_method = 1; // 方法名映射函数名
+    string input_data = 4; // 输入参数
+    string input_token = 5; // 验证参数
+    string input_test = 6; // 测试
+}
+message HandlerBack {
+    int64 back_state = 2; // 接口函数状态
+    string back_msg = 3; // 接口函数信息说明
+    string back_data = 4; // 返回值
+    string back_token = 5; // 验证参数
+    string back_test = 6; // 测试
+}

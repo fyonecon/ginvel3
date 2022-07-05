@@ -1,0 +1,11 @@
+
+1. Ginvel.proto文件生成go配置：
+fyonecon@DJqinshihuang Grpc %
+protoc --go_out=. --go_opt=paths=source_relative \
+    --go-grpc_out=. --go-grpc_opt=paths=source_relative \
+    proto/ginvel.proto
+
+2. 其他语言或其他Go框架中调用gRPC-Server：
+将“ /proto/ginvel.proto ”文件部署在对用语言或Go框架下再次生成新的pb即可。
+
+3. gPRC无api接口，是利用proto文件生成的pb来完成跨语言、跨框架的函数远程调用。

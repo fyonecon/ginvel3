@@ -1,0 +1,6 @@
+
+更新Swagger-Api文档（在main.go目录）：
+swag init
+
+访问文档：
+http://127.0.0.1:9500/swagger/index.html

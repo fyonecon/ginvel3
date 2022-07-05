@@ -1,0 +1,32 @@
+
+M=优先级最高接口，A=优先级低接口，B=耗时接口，特设CPU最高使用率100%
+
+Redis+txt
+
+CPU<80%：
+M正常访问
+A正常访问
+B正常访问
+
+CPU<=92%：
+M正常访问
+A正常访问
+B按耗时长短，制作成缓存来全部访问
+
+CPU>92%：
+M正常访问
+A按耗时长短部分熔断
+B全部熔断
+
+
+指标：CPU、Timeout、Api
+
+运行：
+线路1⃣️自动伸缩访问：handler—middleware—AI查询此Api是否可以正常访问（综合判断）——继续访问/熔断访问
+线路2⃣️记录指标参数：
+	・Api权重Ranking
+	・runtime—实时记录Api（暂时只精确到Api名这个标记，Api+请求参数这个标记暂时不做）+Timeout；
+	・runtime—intervel周期—记录CPU参数
+
+综合判断：
+    timeout = 十次中相同api_tag访问的平均值

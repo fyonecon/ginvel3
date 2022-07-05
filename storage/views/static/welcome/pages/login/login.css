@@ -1,0 +1,126 @@
+.user-login{
+    width: 320px;
+    min-height: 220px;
+    max-height: 280px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    background-image: url(../../static/img/login-bg-img.svg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 300%;
+
+}
+.user-input{
+    width: calc(100% - 14px);
+    height: 34px;
+    padding: 0 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+.user-input-item{
+    padding: 10px 10px;
+}
+.user-title{
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 4px;
+    color: dodgerblue;
+    font-weight: 700;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    height: 36px;
+}
+.user-login-btn{
+    padding: 7px 25px;
+    color: white;
+    background: dodgerblue;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+}
+.user-login-btn:active{
+    opacity: 0.6;
+}
+.user-login-btn:hover{
+    opacity: 0.8;
+}
+.center{
+    text-align: center;
+}
+.user-title-span{
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+.user-login-time{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: lightblue;
+    padding-top: 20px;
+}
+.user-input-check{
+    width: 100px;
+    height: 34px;
+    padding: 0 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+.res-check{
+    width: calc(100% - 100px - 20px);
+    display: inline-block;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.show-check{
+    padding: 0 10px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    color: grey;
+}
+.show-check:active{
+    opacity: 0.6;
+}
+.show-check:hover{
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 460px) {
+    .user-login{
+        width: calc(100% - 20px);
+        top: 100px;
+        bottom: initial;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .res-check{
+        font-size: 16px;
+        line-height: 36px;
+    }
+    .user-login-btn{
+        margin-top: 20px;
+    }
+
+}

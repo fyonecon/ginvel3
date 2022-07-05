@@ -1,0 +1,18 @@
+
+.nav-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+
+    background: #454545;
+    z-index: 10000;
+    width: 100%;
+    padding: 0 10px;
+}
+.active-div{
+    color: orange !important;
+}
+
+

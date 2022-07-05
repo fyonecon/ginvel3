@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="google" content="notranslate"/>
+  <title>Ginvel - WebSocket of Example</title>
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+  <link href="/static/css/page.css" rel="stylesheet"  />
+  <script src="/static/js/page.js" type="javascript" charset="UTF-8"></script>
+</head>
+<body>
+<h3>请控制台查看WebSocket接口示例</h3>
+<script>
+  ;(function (){
+    let ws = new WebSocket("ws://127.0.0.1:9500/ws/ping1");
+    //连接打开时触发
+    ws.onopen = function(evt) {
+      console.log("Connection open ...");
+      ws.send("Hello WebSockets!");
+    };
+    //接收到消息时触发
+    ws.onmessage = function(evt) {
+      console.log("Received Message: " + evt.data);
+    };
+    //连接关闭时触发
+    ws.onclose = function(evt) {
+      console.log("Connection closed.");
+    };
+  })();
+</script>
+<script>
+  ;(function (){
+    console.log("Ginvel - html - ws - example");
+  })();
+</script>
+</body>
+</html>
