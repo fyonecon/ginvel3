@@ -3,6 +3,9 @@
 >Ginvel是GinLaravel的难度版（升级版）。Ginvel使用起来可能比较难，入门难、操作难、阅读难。
 >
 >Ginvel是Golang的一款web MVC框架，基础特性基于Gin、gRPC、Go1.17+、Redis5+。
+> 
+> Ginvel不只是一款web框架；Ginvel会利用尽可能多的默认值来代替或减少报错提醒；Ginvel采用"宽进严出"的原则；Ginvel封装了大量数据处理的函数，做到开箱即用，语意化表达。
+> 
 
 Ginvel3框架仓库：
 >（大陆）https://bitbucket.org/ginvel/ginvel3
