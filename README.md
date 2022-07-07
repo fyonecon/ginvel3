@@ -1,7 +1,7 @@
 
 ## 说明（当前版本：gv3.+ ）
 
->Ginvel是Golang的一款web MVC框架，基础特性基于Gin、gRPC、Go1.17+、Redis5+。
+>Ginvel是Golang的一款web MVC框架或简单的DDD框架，基础特性基于Gin、gRPC、Go1.17+、Redis5+，开发和部署比较灵活。
 > 
 > Ginvel不只是一款web框架；Ginvel会利用尽可能多的默认值来代替或减少报错提醒；Ginvel采用"宽进严出"的原则；Ginvel封装了大量数据处理的函数，做到开箱即用，语意化表达。
 > 
