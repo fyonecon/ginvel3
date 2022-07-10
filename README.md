@@ -3,7 +3,7 @@
 
 >介绍📖：Ginvel是一个MVC+RPC的Golang微服务框架，Http基于Gin，DDD服务基于gRPC。框架需要「 Go1.17^ + MySQL5.7^ + Redis5^ + CPU核心2^ 」的运行环境，开发和部署比较灵活。
 > 
-> 特点🪜：Ginvel会利用尽可能多的默认值来代替或减少报错提醒；Ginvel采用"宽进严出"的原则；Ginvel封装了大量数据处理的函数，做到开箱即用，语意化表达。
+> 特点🪜：Ginvel会利用尽可能多的默认值来代替或减少报错提醒；Ginvel采用"宽进严出"的原则；Ginvel封装了大量数据处理的函数，做到开箱即用，<font color=orange >语意化表达</font>。
 > 
 > 姊妹👩：Ginvel是GinLaravel的难度版（升级版）。Ginvel使用起来可能比较难，入门难、操作难、阅读难。
 >
