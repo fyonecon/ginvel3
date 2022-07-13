@@ -69,7 +69,7 @@ func (routes *Routes) RouteMust(route *gin.Engine) {
 
 	// 静态文件
 	// ico图标
-	route.StaticFile("/favicon.ico", static + "/favicon.ico")
+	route.StaticFile("/favicon.ico", static + "/img/favicon.ico")
 	// robots文件，注意nginx规则里面不要拦截txt格式
 	route.StaticFile("/robots.txt", static + "/robots.txt")
 

@@ -12,7 +12,7 @@ timezone = "Asia/Shanghai" # 系统时区，默认：中国时区（含新加坡
 gv_version = "gv-3.2.5-20220706-15"
 framework_path = "" # 框架根目录的绝对路径
 desc       = "Ginvel是一个Web+GRPC的Golang微服务框架，基础特性基于Gin，支持MVC。框架需要「 Go1.17~ + MySQL5.7~ + Redis5~ + CPU核心2～ 」的运行环境。Apache 2.0。"
-author     = "Ginvel"
+author     = "fyonecon"
 email      = "fyonecon@gmail.com"
 github     = "https://github.com/fyonecon"
 gitee      = "https://gitee.com/fyonecon"
@@ -36,6 +36,10 @@ database = "ginvel_test"
 user = "root_public"
 pwd = "12345678"
 encode = "utf8mb4" # 默认字符集utf8mb4，排序规则utf8mb4_unicode_ci
+timeout = "12s"
+max_open = "200"
+max_idle = "20"
+max_lifetime = "900"
 
 [mysql_2] # 需要手动在框架里实例化
 host = "127.0.0.1"
@@ -44,6 +48,10 @@ database = "ginvel_test2"
 user = "root_public"
 pwd = "12345678"
 encode = "utf8mb4" # 默认字符集utf8mb4，排序规则utf8mb4_unicode_ci
+timeout = "12s"
+max_open = "200"
+max_idle = "20"
+max_lifetime = "900"
 
 [redis_1]
 host = "127.0.0.1"

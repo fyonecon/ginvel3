@@ -33,6 +33,10 @@ type FrameworkConfig struct {
 		User string `toml:"user"`
 		Pwd string `toml:"pwd"`
 		Encode string `toml:"encode"`
+		Timeout string `toml:"timeout"`
+		MaxOpen string `toml:"max_open"`
+		MaxIdle string `toml:"max_idle"`
+		MaxLifetime string `toml:"max_lifetime"`
 	} `toml:"mysql_1"`
 	Mysql2 struct{
 		Host string `toml:"host"`
@@ -41,6 +45,10 @@ type FrameworkConfig struct {
 		User string `toml:"user"`
 		Pwd string `toml:"pwd"`
 		Encode string `toml:"encode"`
+		Timeout string `toml:"timeout"`
+		MaxOpen string `toml:"max_open"`
+		MaxIdle string `toml:"max_idle"`
+		MaxLifetime string `toml:"max_lifetime"`
 	} `toml:"mysql_2"`
 	Redis1 struct{
 		Host string `toml:"host"`

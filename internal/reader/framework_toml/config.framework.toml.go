@@ -18,6 +18,12 @@ func GetMySQLConfig1() map[string]string {
 	pwd := frameworkConfig.Mysql1.Pwd
 	charset := frameworkConfig.Mysql1.Encode
 
+	timeout := frameworkConfig.Mysql1.Timeout
+	maxOpen := frameworkConfig.Mysql1.MaxOpen
+	maxIdle := frameworkConfig.Mysql1.MaxIdle
+	maxLifetime := frameworkConfig.Mysql1.MaxLifetime
+
+
 	// 默认值
 	if len(host) == 0 {
 		host = "127.0.0.1"
@@ -41,11 +47,11 @@ func GetMySQLConfig1() map[string]string {
 	conf["DB_USER"] = user
 	conf["DB_PWD"] = pwd
 	conf["DB_CHARSET"] = charset // "utf8mb4"
-	conf["DB_TIMEOUT"] = "12s"
 
-	conf["DB_MAX_OPEN_CONNS"] = "80"       // 连接池最大连接数
-	conf["DB_MAX_IDLE_CONNS"] = "10"       // 连接池最大空闲数
-	conf["DB_MAX_LIFETIME_CONNS"] = "7200" // 连接池链接最长生命周期
+	conf["DB_TIMEOUT"] = timeout //"15s" // 超时
+	conf["DB_MAX_OPEN_CONNS"] = maxOpen //"200"       // 连接池最大连接数，"0"无限制
+	conf["DB_MAX_IDLE_CONNS"] = maxIdle //"30"        // 连接池最大空闲数，"0"无限制
+	conf["DB_MAX_LIFETIME_CONNS"] = maxLifetime //"1800"   // 连接池链接最长生命周期
 
 	return conf
 }
@@ -59,6 +65,11 @@ func GetMySQLConfig2() map[string]string {
 	user := frameworkConfig.Mysql2.User
 	pwd := frameworkConfig.Mysql2.Pwd
 	charset := frameworkConfig.Mysql2.Encode
+
+	timeout := frameworkConfig.Mysql1.Timeout
+	maxOpen := frameworkConfig.Mysql1.MaxOpen
+	maxIdle := frameworkConfig.Mysql1.MaxIdle
+	maxLifetime := frameworkConfig.Mysql1.MaxLifetime
 
 	// 默认值
 	if len(host) == 0 {
@@ -83,11 +94,11 @@ func GetMySQLConfig2() map[string]string {
 	conf["DB_USER"] = user
 	conf["DB_PWD"] = pwd
 	conf["DB_CHARSET"] = charset // "utf8mb4"
-	conf["DB_TIMEOUT"] = "12s"
 
-	conf["DB_MAX_OPEN_CONNS"] = "80"       // 连接池最大连接数
-	conf["DB_MAX_IDLE_CONNS"] = "10"       // 连接池最大空闲数
-	conf["DB_MAX_LIFETIME_CONNS"] = "7200" // 连接池链接最长生命周期
+	conf["DB_TIMEOUT"] = timeout //"15s" // 超时
+	conf["DB_MAX_OPEN_CONNS"] = maxOpen //"200"       // 连接池最大连接数，"0"无限制
+	conf["DB_MAX_IDLE_CONNS"] = maxIdle //"30"        // 连接池最大空闲数，"0"无限制
+	conf["DB_MAX_LIFETIME_CONNS"] = maxLifetime //"1800"   // 连接池链接最长生命周期
 
 	return conf
 }
