@@ -9,7 +9,7 @@ title = "Ginvel框架全局配置文件（local.framework.toml），支持解析
 [framework]
 framework_hash = "24@22O2levinG" # toml文件密钥，密钥不正确，则toml文件与Ginvel不匹配，直接panic。注意，有格式限制：Y@密钥。
 timezone = "Asia/Shanghai" # 系统时区，默认：中国时区（含新加坡）Asia/Shanghai。其他：世界标准GMT、美股时区EST、日本东京Asia/Tokyo、越南胡志明Asia/Ho_Chi_Minh
-gv_version = "gv-3.2.5-20220706-15"
+gv_version = "gv-3.2.6-20220713-11"
 framework_path = "" # 框架根目录的绝对路径
 desc       = "Ginvel是一个Web+GRPC的Golang微服务框架，基础特性基于Gin，支持MVC。框架需要「 Go1.17~ + MySQL5.7~ + Redis5~ + CPU核心2～ 」的运行环境。Apache 2.0。"
 author     = "fyonecon"
