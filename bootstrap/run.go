@@ -18,7 +18,7 @@ type Bootstrap struct {
 
 // RunBase 初始化基础服务
 func (bootstrap *Bootstrap) RunBase() {
-	log.Println("【运行base函数】 >>> ")
+	log.Println("【运行Base函数】 >>> ")
 
 	bootstrap.FrameworkConfig = framework_toml.ReadFrameworkToml() // 绑定参数
 
@@ -31,7 +31,7 @@ func (bootstrap *Bootstrap) RunBase() {
 
 // RunServer 初始化服务
 func (bootstrap *Bootstrap) RunServer() {
-	log.Println("【运行driver函数】 >>> ")
+	log.Println("【运行Server函数】 >>> ")
 
 	// 服务停止时清理数据库链接
 	defer providers.MysqlDB.Close()
