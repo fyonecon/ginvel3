@@ -11,9 +11,9 @@ import (
 	"time"
 )
 
-type InitInterval struct {}
+type Interval struct {}
 
-func (initInternal *InitInterval) InitInterval()  {
+func (internal *Interval) InitInterval()  {
 
 	// timeout示例，写法v1的相同：
 	// 每12s运行一次："@every 12s" 或 "*/12 * * * * *"

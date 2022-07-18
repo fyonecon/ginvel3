@@ -13,5 +13,6 @@ import (
 // @license.url http://www.apache.org/licenses/LICENSE-2.0.html
 func main() {
 	var run = bootstrap.Bootstrap{}
-	run.RunApp()
+	run.RunBase() // 必选
+	run.RunServer() // 可选，自定义
 }

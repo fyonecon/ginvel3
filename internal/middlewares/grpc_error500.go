@@ -15,7 +15,7 @@ func StreamGSError500(address string) grpc.StreamServerInterceptor {
 	return func(srv interface{}, stream grpc.ServerStream, info *grpc.StreamServerInfo, handler grpc.StreamHandler) (err error) {
 
 		// 自定义中间件代码
-		fmt.Println("StreamGSError500 服务已经加入监听===")
+		fmt.Println("服务【StreamGSError500】已经加入监听===")
 		defer func() {
 			if err := recover(); err != nil {
 				//打印错误堆栈信息
@@ -36,7 +36,7 @@ func UnaryGSError500(address string) grpc.UnaryServerInterceptor {
 	return func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (_ interface{}, err error) {
 
 		// 自定义中间件代码
-		fmt.Println("UnaryGSError500 服务已经加入监听===")
+		fmt.Println("服务【UnaryGSError500】已经加入监听===")
 		defer func() {
 			if err := recover(); err != nil {
 				//打印错误堆栈信息
