@@ -20,6 +20,7 @@ var upGrader = websocket.Upgrader{
 
 // Ping1 处理WebSocket消息
 // ws:// wss://
+// 兼容性：H5、iOS、Android、wx小程序
 // 参考：https://blog.csdn.net/qq_17612199/article/details/79601318
 //      https://blog.csdn.net/weixin_41827162/article/details/117947306
 func Ping1(ctx *gin.Context)  {
@@ -52,6 +53,7 @@ func Ping1(ctx *gin.Context)  {
 		newMsg2 := string(msg) + "@date2=" + helper.GetTimeDate("YmdHis")
 		msg = []byte(newMsg2)
 
+		// 写入（发送）ws数据
 		err = ws.WriteMessage(mt, msg)
 		if err != nil {
 			break
@@ -62,10 +64,15 @@ func Ping1(ctx *gin.Context)  {
 		newMsg3 := string(msg) + "@date3=" + helper.GetTimeDate("YmdHis")
 		msg = []byte(newMsg3)
 
+		// 写入（发送）ws数据
 		err = ws.WriteMessage(mt, msg)
 		if err != nil {
 			break
 		}
+
+		// 主动关闭连接。不主动关闭，则长连接会一直保持。
+		time.Sleep(10 * time.Second)
+		break
 
 	}
 }

@@ -11,22 +11,34 @@
   <script src="/static/js/page.js" type="javascript" charset="UTF-8"></script>
 </head>
 <body>
-<h3>请控制台查看WebSocket接口示例</h3>
+<h2>WebSocket接口示例：</h2>
+<h4 class="ws-h4-0"></h4>
+<h4 class="ws-h4-1"></h4>
+<h4 class="ws-h4-2"></h4>
+<h4 class="ws-h4-3"></h4>
 <script>
   ;(function (){
-    let ws = new WebSocket("ws://127.0.0.1:9500/ws/ping1");
+    let api = "ws://127.0.0.1:9500/ws/ping1";
+    let ws = new WebSocket(api);
+
+    document.getElementsByClassName("ws-h4-0")[0].innerHTML = "api="+api;
     //连接打开时触发
     ws.onopen = function(evt) {
-      console.log("Connection open ...");
-      ws.send("Hello WebSockets!");
+      let info = "Connection open ...";
+      document.getElementsByClassName("ws-h4-1")[0].innerHTML = info;
+
+      ws.send("Hello WebSockets！href="+location.href +"；refer="+document.referrer+"。");
     };
-    //接收到消息时触发
+    //接收到消息时触发，这里会循环运行
     ws.onmessage = function(evt) {
-      console.log("Received Message: " + evt.data);
+      let info = "Received Message: " + evt.data;
+      let el = document.getElementsByClassName("ws-h4-2")[0];
+      el.innerHTML = el.innerHTML + info+'<br/>';
     };
     //连接关闭时触发
     ws.onclose = function(evt) {
-      console.log("Connection closed.");
+      let info = "Connection closed.";
+      document.getElementsByClassName("ws-h4-3")[0].innerHTML = info;
     };
   })();
 </script>

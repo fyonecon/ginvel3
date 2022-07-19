@@ -15,12 +15,16 @@
     <script src="/static/js/page.js" type="javascript" charset="UTF-8"></script>
 </head>
 <body >
-    <h3>html多模板输出示例</h3>
-    <h4>说明：不推荐使用模板渲染数据，请走前后端分离的模板渲染数据</h4>
-    <h4>{{ .url }}</h4>
+    <h2>Gin html多模板输出示例：</h3>
+    <h4>说明：不推荐使用模板渲染数据，请走前后端分离的模板渲染数据（SEO渲染也走前後端分離）</h4>
+    <h4>Href：{{ .url }}</h4>
+    <h4 class="example-h4-1"></h4>
+    <h4 class="example-h4-2"></h4>
     <script>
         ;(function (){
-            console.log("Ginvel - html - tpl");
+            document.getElementsByClassName("example-h4-1")[0].innerHTML = "Host："+location.host;
+            document.getElementsByClassName("example-h4-2")[0].innerHTML = "Refer："+document.referrer;
+            console.log("Ginvel - html - tmpl");
         })();
     </script>
 </body>
