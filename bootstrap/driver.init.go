@@ -50,20 +50,20 @@ func (bootstrap *Bootstrap) InitMustDriver() int64 {
 func (bootstrap *Bootstrap) InitCustomDriver() int64 {
 	log.Println("InitCustomProvider >>> ")
 
-	//var initMySQL = providers.InitMySQL{}
-	//var initGORM = providers.InitGORM{}
+	var initMySQL = providers.InitMySQL{}
+	var initGORM = providers.InitGORM{}
 	//var initRedis = providers.InitRedis{}
-	var initES = providers.InitES{}
+	//var initES = providers.InitES{}
 
 	// 可选服务----数据库2
-	//initMySQL.InitMysql2()
-	//initGORM.InitGorm2()
+	initMySQL.InitMysql2()
+	initGORM.InitGorm2()
 
 	// 可选服务----Redis缓存2
 	//initMySQL.InitRedis2()
 
 	// 可选服务----搜索和数据分析引
-	initES.InitElasticSearch()
+	//initES.InitElasticSearch()
 
 	return  1
 }

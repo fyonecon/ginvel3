@@ -1,5 +1,5 @@
 # Ginvel框架配置文件，参数与源代码分离，方便灵活部署二进制项目
-# 本项目开源地址（web+rpc框架）：https://github.com/fyonecon/ginvel
+# 本项目开源地址（web+rpc框架）：https://github.com/fyonecon/ginvel3
 # 纯web框架请访问：https://github.com/fyonecon/ginlaravel
 
 title = "Ginvel框架全局配置文件（local.framework.toml），支持解析url-toml文件"
@@ -7,15 +7,17 @@ title = "Ginvel框架全局配置文件（local.framework.toml），支持解析
 ################
 
 [framework]
-framework_hash = "24@22O2levinG" # toml文件密钥，密钥不正确，则toml文件与Ginvel不匹配，直接panic。注意，有格式限制：Y@密钥。
-timezone = "Asia/Shanghai" # 系统时区，默认：中国时区（含新加坡）Asia/Shanghai。其他：世界标准GMT、美股时区EST、日本东京Asia/Tokyo、越南胡志明Asia/Ho_Chi_Minh
-gv_version = "gv-3.2.7-20220718-12"
-framework_path = "" # 框架根目录的绝对路径
+gv_version = "gv-3.2.7-20220719-18"
 desc       = "Ginvel是一个Web+GRPC的Golang微服务框架，基础特性基于Gin，支持MVC。框架需要「 Go1.17~ + MySQL5.7~ + Redis5~ + CPU核心2～ 」的运行环境。Apache 2.0。"
 author     = "fyonecon"
 email      = "fyonecon@gmail.com"
 github     = "https://github.com/fyonecon"
 gitee      = "https://gitee.com/fyonecon"
+timezone       = "Asia/Shanghai" # 系统时区，默认：中国时区（含新加坡）Asia/Shanghai。其他：世界标准GMT、美股时区EST、日本东京Asia/Tokyo、越南胡志明Asia/Ho_Chi_Minh
+framework_hash = "24@22O2levinG" # toml文件密钥，密钥不正确，则toml文件与Ginvel不匹配，直接panic。注意，有格式限制：Y@密钥。
+framework_path = "" # 框架根目录的绝对路径
+
+################
 
 [http_server] # http服务-api
 host = "0.0.0.0" # 容器化下请用：0.0.0.0，默认：127.0.0.1
@@ -29,7 +31,7 @@ port = "9600" # tcp端口，默认：9600，应该与grpc_client的端口一致
 host = "0.0.0.0" # 容器化下请用：0.0.0.0，默认：127.0.0.1
 port = "9600" # tcp端口，默认：9600，应该与grpc_server的端口一致
 
-[mysql_1]
+[mysql_1] # 默认。必选。示例：登录、用户信息等。
 host = "127.0.0.1"
 port = "3306" # 默认：3306
 database = "ginvel_test"
@@ -41,7 +43,7 @@ max_open = "200"
 max_idle = "20"
 max_lifetime = "900"
 
-[mysql_2] # 需要手动在框架里实例化
+[mysql_2] # 需要手动在框架里实例化。可选。示例：统计和数据分析。
 host = "127.0.0.1"
 port = "3306" # 默认：3306
 database = "ginvel_test2"
@@ -53,19 +55,19 @@ max_open = "200"
 max_idle = "20"
 max_lifetime = "900"
 
-[redis_1]
+[redis_1] # 默认。必选。
 host = "127.0.0.1"
 port = "6379" # 默认：6379
 pwd = ""
 database = "0" # 默认：0
 
-[redis_2] # 需要手动在框架里实例化
+[redis_2] # 需要手动在框架里实例化。可选。
 host = "127.0.0.1"
 port = "6379" # 默认：6379
 pwd = ""
 database = "0" # 默认：0
 
-[elastic_search]
+[elastic_search] # 需要手动在框架里实例化。可选。
 http_host = "http://127.0.0.1" # 前面要加协议http或https
 port = "9200" # 默认9200
 username = ""
@@ -73,6 +75,7 @@ password = ""
 cloud_id = ""
 api_key = ""
 
+################
 
 [view] # 静态文件、模板路径
 view_html = "storage/views/html" # 默认：storage/views/html

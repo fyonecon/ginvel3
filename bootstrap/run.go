@@ -24,7 +24,7 @@ func (bootstrap *Bootstrap) RunBase() {
 
 	bootstrap.InitChecker() // 必选
 	bootstrap.InitMustDriver() // 必选
-	//go bootstrap.InitCustomDriver() // 可选，自定义
+	bootstrap.InitCustomDriver() // 可选，自定义
 
 	return
 }
