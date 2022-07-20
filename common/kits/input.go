@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"ginvel/common/helper"
 	"github.com/gin-gonic/gin"
+	"log"
 	"strings"
 )
 
@@ -95,6 +96,7 @@ func Input(ctx *gin.Context, key string) string {
 	if _method == "GET" {
 		value, hasKey = ctx.GetQuery(key)
 	}else if _method == "POST" {
+		log.Println("key=", key)
 		if len(_contentType) >= 1 { // 判断是否含有请求头信息数组
 			hasCt1 := strings.Contains(_contentType[0], "application/x-www-form-urlencoded") // 一般用于参数
 			hasCt2 := strings.Contains(_contentType[0], "multipart/form-data") // 一般用于文件或参数
@@ -118,14 +120,16 @@ func Input(ctx *gin.Context, key string) string {
 
 		//
 		formJson := ctx.Request.Form
+		//log.Println(formJson)
 		for formData, _ := range formJson{
 			value = formData
 			break
 		}
+		//log.Println(value)
 		var v interface{}
 		err := json.Unmarshal([]byte(value), &v)
 		if err != nil {
-			return ""
+			return "Input出现错误，参考值："+value // 返回参考值
 		}else {
 			data := v.(map[string]interface{})
 			value = helper.InterfaceToString(data[key])

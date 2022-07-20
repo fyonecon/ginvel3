@@ -108,6 +108,7 @@ func CheckToken(adminId string, loginName string, loginToken string, appClass st
 			adminId,
 			loginName,
 			loginToken,
+			appClass,
 		},
 	}
 }

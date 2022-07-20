@@ -162,7 +162,7 @@ func AdminLogin(ctx *gin.Context)  {
 			"app_class": appClass,
 			"login_id": adminID,
 			"login_name": loginName,
-			"login_token": helper.EncodeBase64(loginToken),
+			"login_token": helper.EncodeURL(loginToken),
 			"login_pwd": loginPwd,
 			"level_info": map[string]interface{}{
 				"login_level": loginLevel,
@@ -180,6 +180,7 @@ func CheckLoginToken(ctx *gin.Context)  {
 	appClass := kits.Input(ctx, "app_class")
 	loginID := kits.Input(ctx, "login_id")
 	loginName := kits.Input(ctx, "login_name")
+	loginLevel := "已登录"
 
 	// 接口返回
 	back := map[string]interface{}{
@@ -189,6 +190,7 @@ func CheckLoginToken(ctx *gin.Context)  {
 			"app_class": appClass,
 			"login_id": loginID,
 			"login_name": loginName,
+			"login_level": loginLevel,
 		},
 	}
 	ctx.JSONP(200, back)

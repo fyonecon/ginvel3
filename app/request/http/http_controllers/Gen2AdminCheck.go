@@ -17,7 +17,8 @@ func Gen2AdminCheck(ctx *gin.Context) {
 	appClass := kits.Input(ctx, "app_class")
 	loginID := kits.Input(ctx, "login_id")
 	loginName := kits.Input(ctx, "login_name")
-	loginToken := kits.Input(ctx, "login_token"); loginToken = helper.DecodeBase64(loginToken)
+	loginToken := kits.Input(ctx, "login_token")
+	loginToken, _ = helper.DecodeURL(loginToken)
 
 	classState := Gen2Admin.CheckAppClass(appClass)
 	tokenState := Gen2Admin.CheckToken(loginID, loginName, loginToken, appClass)
