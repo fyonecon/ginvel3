@@ -105,14 +105,18 @@ GinLaravel框架仓库：
 >
 > 请提前开启你的Redis服务
 
-> cmd中运行「 go run main.go 」即可启动项目。
+> 4⃣️填写配置文件（数据库、端口、文件路径等）
+> 
+> toml文件路径：/storage/config_toml/local.framework.toml
+
+> 5⃣️在根目录cmd中运行「 go run main.go 」即可启动项目。
 >
 > 或使用热更方式启动http服务，在cmd中目录运行"fresh"。v1.4开始为适配swaggo遂将server.go更名为main.go。
 
-> 访问
+> 6⃣️访问
 >
 > http://127.0.0.1:9500
-
+>
 > 项目上线
 >
 > serverConfig["ENV"]的值改成release，然后使用以上同样方法运行。
