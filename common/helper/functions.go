@@ -58,6 +58,7 @@ func SaltPwdUser(Salt string) string {
 
 // StringHasString 判断字符串中是否包含某个字符串
 // -1代表不包含，其他代表第一次出现的索引位置
+// 请用string.contains代替
 func StringHasString(bigString string, minString string) int64 {
 	index := strings.Index(bigString, minString)
 	return int64(index)
