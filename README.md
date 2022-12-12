@@ -1,7 +1,7 @@
 
 ## 了解（当前版本：gv3.^）
 
->介绍：Ginvel是一个MVC+RPC的Golang微服务框架，Http基于Gin，DDD服务基于gRPC。框架需要「 Go1.17^ + MySQL5.7^ + Redis5^ + CPU核心2^ 」的运行环境，开发和部署比较灵活。
+>介绍：Ginvel是一个MVC+RPC的Golang微服务框架，Http基于Gin，DDD服务基于gRPC。框架需要「 Go1.19^ + MySQL5.7^ + Redis5^ + CPU核心2^ 」的运行环境，开发和部署比较灵活。
 > 
 > 特点：Ginvel会利用尽可能多的默认值来代替或减少报错提醒；Ginvel采用"宽进严出"的原则；Ginvel封装了大量数据处理的函数，做到开箱即用，<font color=orange >语意化表达</font>。
 > 
@@ -33,7 +33,7 @@ GinLaravel框架仓库：
 > 测试过的客户端环境等：Vue3+Axios、Fetch、POST（x-www-form-urlencoded）、GET、Centos7、Mac。
 
 ## 设计理念
-> 宽进严出，功能组合式，面向Api，适合复杂项目，任何参数或服务都会有默认值。整个项目运行需go(1.17+<2021~>)+mysql+redis！
+> 宽进严出，功能组合式，面向Api，适合复杂项目，任何参数或服务都会有默认值。整个项目运行需go+mysql+redis！
 
 > state状态码示意：1请求成功+接口有数据，StatusCode为200；0请求成功+接口无数据，包含请求条件不足，StatusCode为200；403被拒绝访问，StatusCode为403；404接口名称错误，StatusCode为404；429请求频率限制或请求拥挤，StatusCode为429；500服务器代码错误，StatusCode为500。
 

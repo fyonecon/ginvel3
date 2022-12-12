@@ -16,7 +16,7 @@ type Checker struct {}
 // 默认64位
 func (checker *Checker) CheckGolang()  {
 	var _goVersion string = runtime.Version()
-	var minVersion string = "go1.17.0"
+	var minVersion string = "go1.19.0"
 	var goVersion string = strings.Replace(_goVersion, "go", "", -1)
 	var goArray []string = strings.Split(goVersion, ".")
 	var go1 int
@@ -31,7 +31,7 @@ func (checker *Checker) CheckGolang()  {
 				go2 = int(theValue)
 				if go1 == 1 { // min
 					goYes = goYes + 1
-					if go2 >= 17 { // min
+					if go2 >= 19 { // min
 						goYes = goYes + 1
 					}
 				}else if go1 >= 2 {
@@ -45,7 +45,8 @@ func (checker *Checker) CheckGolang()  {
 	if goYes == 2 {
 		//log.Println("Go版本符合要求 >>> 当前Go版本：", _goVersion, " 最小要求版本：" + minVersion, " Golang权威文档：https://go.dev/ 或 https://golang.google.cn/ ")
 	}else {
-		log.Println("Go版本太低，框架所依赖的特性将不可直接使用！Ginvel服务自动中断！", "当前Go版本："+_goVersion, " 最小要求版本：" + minVersion, "运行中断")
+		log.Println("当前Golang版本："+_goVersion, "	最小Golang版本：" + minVersion, "	Golang下载：https://golang.google.cn/dl/")
+		log.Println("Golang版本太低，框架所依赖的特性将不可直接使用！Ginvel服务自动中断！")
 		os.Exit(200)
 	}
 
