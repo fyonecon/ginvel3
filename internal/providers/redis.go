@@ -1,4 +1,5 @@
 package providers
+
 // 使用插件：https://github.com/go-redis/redis
 
 import (
@@ -7,11 +8,13 @@ import (
 	"ginvel/internal/reader/framework_toml"
 	"github.com/go-redis/redis/v8"
 	"log"
+	"runtime"
 )
 
-type InitRedis struct {}
+type InitRedis struct{}
 
 var RedisDb *redis.Client
+
 func (initRedis *InitRedis) InitRedis1() {
 	log.Println("尝试连接GoRedis1...")
 
@@ -19,15 +22,21 @@ func (initRedis *InitRedis) InitRedis1() {
 	var address = rdbConfig["Host"] + ":" + rdbConfig["Port"]
 
 	defer func() {
-		if r := recover(); r != nil {
+		var r any = recover()
+		switch r.(type) {
+		case runtime.Error:
+			log.Println("运行时错误：", r)
+		default:
+			//
+			//if r := recover(); r != nil { // ^1.17老编辑器写法
 			log.Println("GoRedis1初始化出现问题，已经跳过。。。")
 		}
 	}()
 
 	RedisDb = redis.NewClient(&redis.Options{ // 连接服务
-		Addr:     address,                        // string
+		Addr:     address,                                  // string
 		Password: rdbConfig["Password"],                    // string
-		DB: int(helper.StringToInt(rdbConfig["DB"])), 		// int
+		DB:       int(helper.StringToInt(rdbConfig["DB"])), // int
 	})
 	RedisPong, RedisErr := RedisDb.Ping(context.Background()).Result() // 心跳
 	if RedisErr != nil {
@@ -38,15 +47,15 @@ func (initRedis *InitRedis) InitRedis1() {
 			" 关闭安全模式：CONFIG SET protected-mode no \n" +
 			" 重置密码：config set requirepass [密码]\n")
 		//os.Exit(200)
-	}else {
+	} else {
 		log.Println("GoRedis1已连接 >>> ")
 	}
 
 	return
 }
 
-
 var RedisDb2 *redis.Client
+
 func (initRedis *InitRedis) InitRedis2() {
 	log.Println("尝试连接GoRedis2...")
 
@@ -54,15 +63,21 @@ func (initRedis *InitRedis) InitRedis2() {
 	var address = rdbConfig["Host"] + ":" + rdbConfig["Port"]
 
 	defer func() {
-		if r := recover(); r != nil {
+		var r any = recover()
+		switch r.(type) {
+		case runtime.Error:
+			log.Println("运行时错误：", r)
+		default:
+			//
+			//if r := recover(); r != nil {
 			log.Println("GoRedis2初始化出现问题，已经跳过。。。")
 		}
 	}()
 
 	RedisDb = redis.NewClient(&redis.Options{ // 连接服务
-		Addr:     address,                        // string
+		Addr:     address,                                  // string
 		Password: rdbConfig["Password"],                    // string
-		DB: int(helper.StringToInt(rdbConfig["DB"])), 		// int
+		DB:       int(helper.StringToInt(rdbConfig["DB"])), // int
 	})
 	RedisPong, RedisErr := RedisDb.Ping(context.Background()).Result() // 心跳
 	if RedisErr != nil {
@@ -73,7 +88,7 @@ func (initRedis *InitRedis) InitRedis2() {
 			" 关闭安全模式：CONFIG SET protected-mode no \n" +
 			" 重置密码：config set requirepass [密码]\n")
 		//os.Exit(200)
-	}else {
+	} else {
 		log.Println("GoRedis2已连接 >>> ")
 	}
 
