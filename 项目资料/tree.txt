@@ -1,0 +1,100 @@
+.
+├── app
+│   ├── apparm
+│   │   └── ai
+│   │       ├── collect_data
+│   │       └── flow_ocean
+│   └── request
+│       ├── grpc
+│       │   ├── grpc_client
+│       │   │   └── GCControllers
+│       │   │       └── GCExample
+│       │   ├── grpc_server
+│       │   │   └── GSControllers
+│       │   │       └── GSExample
+│       │   └── proto
+│       ├── http
+│       │   ├── HttpControllers
+│       │   │   ├── Gen1
+│       │   │   │   └── Gen1Admin
+│       │   │   └── HttpExample
+│       │   │       ├── Captcha
+│       │   │       ├── ControllerGorm
+│       │   │       ├── ControllerMySQL
+│       │   │       ├── DBGorm
+│       │   │       ├── DbMSQL
+│       │   │       ├── ES
+│       │   │       ├── Recommend
+│       │   │       ├── Redis
+│       │   │       ├── Segment
+│       │   │       ├── Test
+│       │   │       └── WebSocket
+│       │   └── HttpModels
+│       │       └── HttpExampleModel
+│       │           ├── ModelGorm
+│       │           └── ModelMySQL
+│       ├── kafka
+│       └── websocket
+│           └── WSControllers
+│               └── WSExample
+├── bootstrap
+├── config
+│   ├── framework_toml
+│   └── http_block_json
+├── docs
+├── internal
+│   ├── helper
+│   ├── kits
+│   │   ├── kits_lib
+│   │   └── kits_test
+│   ├── middlewares
+│   ├── providers
+│   └── runtime
+│       ├── hold_framework
+│       ├── hold_hardware
+│       └── hold_request
+├── routes
+│   └── route_group
+│       ├── Gen1
+│       ├── HttpExampleRoutes
+│       └── WSExampleRoutes
+├── storage
+│   ├── ai_data
+│   ├── cache
+│   ├── config_json
+│   ├── config_toml
+│   ├── fresh_tmp
+│   ├── sys_file
+│   │   ├── afocus
+│   │   ├── gse
+│   │   │   ├── data
+│   │   │   │   └── dict
+│   │   │   │       ├── jp
+│   │   │   │       └── zh
+│   │   │   └── testdata
+│   │   └── seg
+│   │       ├── data
+│   │       └── testdata
+│   ├── sys_log
+│   │   ├── error
+│   │   │   ├── 20210803
+│   │   │   ├── 20210805
+│   │   │   ├── 20210806
+│   │   │   ├── 20210809
+│   │   │   └── 20210813
+│   │   └── ok
+│   ├── upload
+│   └── views
+│       ├── html
+│       └── static
+├── tests
+│   ├── cache
+│   ├── file
+│   ├── t20210804
+│   ├── t20210804-2
+│   ├── t20210805
+│   ├── t20210809
+│   ├── t20210810
+│   ├── t20210821
+│   └── tmp
+├── vendor

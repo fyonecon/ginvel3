@@ -1,0 +1,78 @@
+
+Http/转换成http/，严格区分大小写
+
+ginlaravel名字修改成ginvel
+
+新增文件夹
+storage/sys_log/ok
+storage/sys_log/error
+storage/sys_log/limit
+
+日志文件名按小时命名
+
+
+====================
+
+安装窗口软件：
+yum install screen
+
+
+窗口列表：
+screen -ls
+
+
+新建窗口：
+screen  -S   <窗口名> 
+或直接使用
+screen
+
+
+清除无效窗口：
+screen -wipe 
+
+
+切换到该id的窗口：
+screen -r <id> 
+
+========================
+
+宝塔域名对应的Nginx配置文件：
+
+server
+{
+    listen 80;
+    server_name xxx.xxx.com;
+    
+    location ~* .(txt|env|toml|yaml|log)$ {
+        return 404;
+    }
+    
+    location / {
+        proxy_pass http://127.0.0.1:9500;
+        index index.html index.htm index.php index.jsp;
+    }
+    
+    #access_log  /www/wwwlogs/xxx.xxx.com;;
+    error_log  /www/wwwlogs/xxx.xxx.com.error.log;
+}
+
+
+========================
+
+Mac系统下最好运行一次：
+xcode-select --install
+
+
+
+========================
+          location ~* .(env|toml|yaml|log)$ {
+             return 404;
+          }
+
+
+
+========================
+
+
+
+

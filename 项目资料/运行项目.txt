@@ -1,0 +1,66 @@
+
+联系作者fyonecon：
+长沙（2016-2020#WEB、2018-2020#PHP、2021—#GO）；
+邮箱：fyonecon@gmail.com；
+微信：fy66881159；
+博客：https://blog.csdn.net/weixin_41827162
+
+学习文档：
+GO语言：https://www.runoob.com/go/go-multi-dimensional-arrays.html
+Gin框架：https://www.tizi365.com/archives/250.html
+GORM数据库操作：https://www.tizi365.com/archives/6.html
+官方SQL文档：https://studygolang.com/pkgdoc
+SQL文档：http://www.topgoer.com/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C/go%E6%93%8D%E4%BD%9Cmysql/mysql%E4%BD%BF%E7%94%A8.html
+
+获取源代码：
+git clone https://github.com/fyonecon/ginlaravel.git
+cd ginlaravel
+
+使用 govendor 安装依赖包：
+go get -u -v github.com/kardianos/govendor
+govendor sync
+
+初始化项目：
+go mod init
+
+构建依赖：
+go mod tidy
+go build -mod=mod
+go mod vendor
+
+启动MySQL数据库：请自行启动。
+
+直接启动http服务：
+go run server.go
+
+或热更刷新方式启动http服务：
+fresh
+
+关闭/停止http服务：
+ctrl + c
+隐藏cmd窗口但继续运行服务：
+ctrl + z
+
+迁移项目呢时，需要更换项目名：
+-go.mod
+-route.go
+-door.go
+-mysql.go
+--控制器里面的
+
+===========
+
+https://github.com/didip/tollbooth
+go get github.com/pilu/fresh
+
+
+===========
+
+#Nginx下为了避免配置文件泄露请酌情配置黑名单文件格式的访问：
+location ~* .(env|toml|yaml|log)$ {
+   return 404;
+}
+
+===========
+
+

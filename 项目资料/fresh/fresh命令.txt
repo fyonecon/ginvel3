@@ -1,0 +1,27 @@
+运行fresh热更服务（Mac环境）
+以项目目录 /Users/fyonecon/go/src/ginvel 为例
+
+安装fresh：
+go get github.com/pilu/fresh
+
+去.bash_profile文件目录：
+cd ~
+
+重新编译配置文件：
+source ~/.bash_profile
+
+切换到项目根目录：
+cd go/src/ginvel
+
+开启热更（其中项目"/storage/"目录及其子目录需要777权限。）：
+fresh
+
+退出http服务用快捷键：Ctrl + C 。或直接关闭终端窗口。
+
+注意，在Mac开发环境中：
+以上所用命令在Goland的terminal里面只运行fresh就可以了，
+但是为了方便，也可在iterm2软件里面设置shell一次性运行：
+iterm2——设置——Profiles——点左侧新建——General
+——Cammand（选择 Login Shell）填入括号里面
+【cd ~; source ~/.bash_profile; cd /Users/fyonecon/go/src/ginvel; fresh;】
+内容即可。
