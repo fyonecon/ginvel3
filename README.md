@@ -105,9 +105,18 @@ GinLaravel框架（Ginvel姊妹框架）仓库：
 >
 > 请提前开启你的Redis服务
 
-> 4⃣️填写配置文件（数据库、端口、文件路径等）
+> 4⃣️填写配置文件（数据库、端口、文件路径等） toml文件路径：
 > 
-> toml文件路径：/storage/config_toml/local.framework.toml
+> /storage/config_toml/local.framework.toml
+> 
+> 
+> 注意：Nginx下为了避免配置文件泄露请酌情配置黑名单文件格式的访问：
+> 
+> location ~* .(env|toml|yaml|log)$ {
+> 
+> return 404;
+> 
+> }
 
 > 5⃣️在根目录cmd中运行「 go run main.go 」即可启动项目。
 >
