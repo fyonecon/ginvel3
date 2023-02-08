@@ -8,7 +8,6 @@ import (
 	"ginvel/internal/reader/framework_toml"
 	"github.com/go-redis/redis/v8"
 	"log"
-	"runtime"
 )
 
 type InitRedis struct{}
@@ -22,13 +21,7 @@ func (initRedis *InitRedis) InitRedis1() {
 	var address = rdbConfig["Host"] + ":" + rdbConfig["Port"]
 
 	defer func() {
-		var r any = recover()
-		switch r.(type) {
-		case runtime.Error:
-			log.Println("运行时错误：", r)
-		default:
-			//
-			//if r := recover(); r != nil { // ^1.17老编辑器写法
+		if r := recover(); r != nil {
 			log.Println("GoRedis1初始化出现问题，已经跳过。。。")
 		}
 	}()
@@ -63,13 +56,7 @@ func (initRedis *InitRedis) InitRedis2() {
 	var address = rdbConfig["Host"] + ":" + rdbConfig["Port"]
 
 	defer func() {
-		var r any = recover()
-		switch r.(type) {
-		case runtime.Error:
-			log.Println("运行时错误：", r)
-		default:
-			//
-			//if r := recover(); r != nil {
+		if r := recover(); r != nil {
 			log.Println("GoRedis2初始化出现问题，已经跳过。。。")
 		}
 	}()

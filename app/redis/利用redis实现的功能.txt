@@ -1,0 +1,13 @@
+Redis常用命令：
+===================
+
+Redis启动：
+
+Centos：
+cd /root/redis-6.2.3
+src/redis-server
+
+MacOS：
+redis-server
+
+===================

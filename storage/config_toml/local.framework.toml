@@ -7,7 +7,7 @@ title = "Ginvel框架全局配置文件（local.framework.toml），支持解析
 ################
 
 [framework]
-gv_version = "gv-3.3.0-20230206-15"
+gv_version = "gv-3.3.1-20230209-01"
 desc       = "Ginvel是一个Web+GRPC的Golang微服务框架，基础特性基于Gin，支持MVC。框架需要「 Go1.19~ + MySQL5.7~ + Redis5~ + CPU核心2～ 」的运行环境。Apache 2.0。"
 author     = "fyonecon"
 email      = "fyonecon@gmail.com"
