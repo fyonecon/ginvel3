@@ -10,7 +10,7 @@ import "fmt"
 // apiRanking：接口等级值
 func CollectRequestStat(apiName string, statLatency interface{}, apiRanking interface{}) {
 	if apiRanking != nil { // 排除无ranking的情况，如，静态文件接口是没有ranking的。
-		fmt.Println("收集接口请求=", apiName, statLatency, apiRanking)
+		fmt.Println("周期收集接口请求=", apiName, statLatency, apiRanking)
 		// 保存数据
 		// 待续或其他
 
@@ -23,7 +23,7 @@ func CollectRequestStat(apiName string, statLatency interface{}, apiRanking inte
 // 定时器的计数
 // cpuPercent：0.000000
 func CollectHardwareCPUPercent(num int, timeout string, serverIP string, cpuPercent float64) {
-	fmt.Println("收集服务器信息=", num, timeout, serverIP, cpuPercent)
+	fmt.Println("周期定时收集服务器信息=", num, timeout, serverIP, cpuPercent)
 	// 保存数据
 	// 待续或其他
 
