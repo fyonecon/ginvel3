@@ -1,4 +1,5 @@
 package hold_hardware
+
 // 硬件参数
 
 // #include <unistd.h>
@@ -6,7 +7,7 @@ import "C"
 
 import (
 	"fmt"
-	"ginvel/app/arm/ai/collect_data"
+	"ginvel/app/arm/collect_data"
 	"ginvel/common/helper"
 	"github.com/shirou/gopsutil/v3/cpu"
 	_ "github.com/shirou/gopsutil/v3/host"
@@ -17,10 +18,10 @@ import (
 	"time"
 )
 
-type HoldHardware struct {}
+type HoldHardware struct{}
 
 // Hardware 服务器硬件信息
-func (holdHardware *HoldHardware) Hardware(num int, timeout string)  {
+func (holdHardware *HoldHardware) Hardware(intervalId int, num int, timeout string) {
 
 	// 内存信息
 	// total // 内存大小
