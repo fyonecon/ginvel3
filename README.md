@@ -28,7 +28,7 @@ GinLaravel框架（Ginvel姊妹框架）仓库：
 >https://github.com/fyonecon/ginlaravel
 
 ## 现已支持
-> Go-MySQL、GORM（v2）、Go-Redis、热更（fresh）、Swagger、MVC（不推荐使用）、HTML模版输出、Http访问频率拦截、Http熔断机制、HttpCors、对称加密（可中文）、http拦截器、熔断、多层路由、分词与全文检索、运行时监控、图形验证码、生成和读取Excel、全局定时器等。
+> Go-MySQL、GORM（v2）、Go-Redis、热更（fresh）、Swagger（自动生成文档<如需手动生成文档，请使用postman或apipost软件>）、MVC（不推荐使用，请使用纯Controller或MC）、HTML模版输出、Http访问频率拦截、Http熔断机制、HttpCors、对称加密（可中文）、http拦截器、熔断、多层路由、分词与全文检索、运行时监控、图形验证码、生成和读取Excel、全局定时器等。
 
 > 测试过的客户端环境等：Vue3+Axios、Fetch、POST（x-www-form-urlencoded）、GET、Centos7、Mac。
 
