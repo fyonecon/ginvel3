@@ -14,7 +14,7 @@ email      = "fyonecon@gmail.com"
 github     = "https://github.com/fyonecon"
 gitee      = "https://gitee.com/fyonecon"
 timezone       = "Asia/Shanghai" # 系统时区，默认：中国时区（含新加坡）Asia/Shanghai。其他：世界标准GMT、美股时区EST、日本东京Asia/Tokyo、越南胡志明Asia/Ho_Chi_Minh
-framework_hash = "26@22O2levinG" # toml文件密钥，密钥不正确，则toml文件与Ginvel不匹配，直接panic。注意，有格式限制：Y@密钥。
+framework_hash = "28@22O2levinG" # toml文件密钥，密钥不正确，则toml文件与Ginvel不匹配，直接panic。注意，有格式限制：Y@密钥。
 framework_path = "" # 框架根目录的绝对路径
 
 ################
