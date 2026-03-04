@@ -23,7 +23,7 @@ Ginvel3-Admin后台管理系统：
 > 
 > 示例MySQL数据：
 > 
-> https://cdnaliyun.oss-accelerate-overseas.aliyuncs.com/ginvel_mysql/ginvel_test-20220719-2.sql
+> ginvel_mysql/ginvel_test-20220719-2.sql
 
 GinLaravel框架（Ginvel姊妹框架）仓库：
 >https://github.com/fyonecon/ginlaravel
